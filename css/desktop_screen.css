@@ -18,7 +18,34 @@
     .column-start-3 {
         grid-column-start: 3;
     }
+    .column-end-1 {
+        grid-column-end: 1;
+    }
+    .column-end-2 {
+        grid-column-end: 2;
+    }
+    .column-end-3 {
+        grid-column-end: 3;
+    }
+    .a-no-style {
+        text-decoration: none;
+    }
+    .general-hori-marg {
+        margin-left: 10%;
+    }
     header nav ul li {
         display: inline;
+    }
+    header div {
+        font-family: 'Chakra Petch', sans-serif;
+        background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+        box-shadow: 0 1px 0 0 #110038;
+    }
+    header img {
+        margin-top: 5.4%;
+    }
+    ul {
+        height: 100%;
+        align-items: center;
     }
 }
