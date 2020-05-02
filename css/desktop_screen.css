@@ -1,2 +1,24 @@
 @import "variables.css";
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .display-grid {
+        display: grid;
+    }
+    .row-start-1 {
+        grid-row-start: 1;
+    }
+    .row-start-2 {
+        grid-row-start: 2;
+    }
+    .column-start-1 {
+        grid-column-start: 1;
+    }
+    .column-start-2 {
+        grid-column-start: 2;
+    }
+    .column-start-3 {
+        grid-column-start: 3;
+    }
+    header nav ul li {
+        display: inline;
+    }
+}
