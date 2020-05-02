@@ -1,1 +1,5 @@
-:root {}
+:root {
+    --general-left-margin: 10%;
+    --general-right-margin: 10%;
+    --general-background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
