@@ -1,0 +1,30 @@
+.night-color-body {}
+
+.night-background-image {
+    background-image: var(--night-background-image);
+}
+
+.night-menu-button-color {
+    color: #FFFFFF;
+    background-color: #EE3EFE;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.night-menu-a {
+    color: #FFFFFF;
+}
+
+.night-background-search-menu {
+    background: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.night-suggestions-p {
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+}
+
+.day-suggestions-div {
+    background-color: #B4B4B4;
+    box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+}

@@ -1,5 +1,6 @@
 :root {
     --general-left-margin: 10%;
     --general-right-margin: 10%;
-    --general-background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    --day-background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    --night-background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 }

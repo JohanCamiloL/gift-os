@@ -58,27 +58,15 @@
     }
     .first-type-button {
         font-size: 16px;
-        color: #110038;
         line-height: 18px;
         text-align: center;
         width: 70%;
         padding: 3% 0%;
         border: 1px solid #110038;
-        background: #F7C9F3;
-        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     }
     .dropdown-button {
         width: 17%;
         color: #F7C9F3;
-    }
-    .light-color-body {
-        background-color: #FFF4FD;
-    }
-    .dark-color-body {
-        background-color: ;
-    }
-    .light-color {
-        background-image: var(--general-background-image);
     }
     header nav ul li {
         display: inline;
@@ -104,14 +92,11 @@
     }
     header ul li a {
         font-size: 16px;
-        color: #110038;
     }
     header ul li a span {
         text-decoration: underline;
     }
     .search-menu {
-        background: #E6E6E6;
-        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
         margin-top: 3%;
     }
     .search-menu div:nth-of-type(1) {
@@ -152,5 +137,37 @@
     .search-menu div:nth-of-type(2) img {
         font-size: 1.5vw;
         margin-right: 10%;
+    }
+    .suggestions p {
+        background-color: #FFFAFE;
+        color: #110038;
+        letter-spacing: 0;
+        font-size: 14px;
+        padding: .5% .8%;
+        margin-top: 5%;
+    }
+    .suggestions div {
+        margin-top: 1%;
+        grid-template-columns: repeat(4, 24.3%);
+        column-gap: 1%;
+    }
+    .gif-info {
+        height: 18vw;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        padding: 1% 1% 0% 1%;
+    }
+    .gif-info p {
+        grid-row-start: 1;
+        margin-top: 0%;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-decoration: solid;
+        align-self: center;
+    }
+    .gif-place {
+        grid-row-start: 2;
+        background-color: red;
+        height: 90%;
     }
 }

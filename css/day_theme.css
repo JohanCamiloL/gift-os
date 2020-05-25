@@ -1,0 +1,32 @@
+.day-color-body {
+    background-color: #FFF4FD;
+}
+
+.day-background-image {
+    background-image: var(--day-background-image);
+}
+
+.day-menu-button-color {
+    color: #110038;
+    background-color: #F7C9F3;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.day-menu-a {
+    color: #110038;
+}
+
+.day-background-search-menu {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.day-suggestions-p {
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+.day-suggestions-div {
+    background-color: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
