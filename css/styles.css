@@ -1,5 +1,6 @@
-@import "mobile_screen.css";
 @import "desktop_screen.css";
+@import "day_theme.css";
+@import "night_theme.css";
 * {
     padding: 0%;
     margin: 0%;
