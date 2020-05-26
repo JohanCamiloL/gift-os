@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans&display=swap" rel="stylesheet">
     <title>gifOS</title>
 </head>
 
@@ -19,8 +20,8 @@
         <img src="img/gifOF_logo.png" alt="Logo de Gif OS" class="row-start-2">
         <nav class="row-start-2">
             <ul class="display-grid">
-                <li class="column-start-2 display-grid"><button
-                        class="first-type-button justify-self-end chakra-regular-font day-menu-button-color">Crear
+                <li class="column-start-2 display-grid">
+                    <button class="first-type-button justify-self-end chakra-regular-font day-menu-button-color">Crear
                         Guifos</button></li>
                 <li class="column-start-3 display-flex">
                     <button class="first-type-button chakra-regular-font day-menu-button-color">Elegir Tema</button>
@@ -28,7 +29,8 @@
                             alt=""></button>
                 </li>
                 <li class="column-start-4 display-grid">
-                    <a href="" class="a-no-style chakra-regular-font justify-self-end"><span>M</span>is Guifos</a>
+                    <a href="" class="a-no-style chakra-regular-font justify-self-end day-menu-a"><span>M</span>is
+                        Guifos</a>
                 </li>
             </ul>
         </nav>
@@ -38,10 +40,12 @@
             <p class="chakra-regular-font letter-spacing-0">Buscar</p>
         </div>
         <div class="row-start-2 display-grid justify-self-center">
-            <input type="text" class="column-start-1 chakra-regular-font letter-spacing-0"
+            <input id="search-gif-input" type="text" class="column-start-1 chakra-regular-font letter-spacing-0"
                 placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button class="column-start-2 chakra-regular-font letter-spacing-0 align-self-center">
-                <img src="img/lupa_inactive.svg" alt="">
+            <button id="search-gif-button"
+                class="column-start-2 chakra-regular-font letter-spacing-0 align-self-center day-search-button"
+                disabled>
+                <i class="fas fa-search"></i>
                 Buscar
             </button>
         </div>
@@ -75,7 +79,12 @@
             </div>
         </div>
     </section>
+    <section class="tendency display-grid general-marg">
+        <p class="row-start-1 chakra-regular-font day-suggestions-p">Tendencias:</p>
+    </section>
     <script src="js/script.js"></script>
+    <script src="js/listeners.js"></script>
+    <script src="https://kit.fontawesome.com/f439f476a0.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

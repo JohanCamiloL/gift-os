@@ -1,4 +1,6 @@
-.night-color-body {}
+.night-color-body {
+    background-color: #04006D;
+}
 
 .night-background-image {
     background-image: var(--night-background-image);
@@ -10,8 +12,20 @@
     box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.night-menu-button-color:hover, night-menu-button-color:active {
+    background-color: #CE36DB;
+    border: 1px dotted #110038;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    color: #FFFFFF;
+}
+
 .night-menu-a {
     color: #FFFFFF;
+}
+
+.night-menu-a:hover {
+    color: #FFFFFF;
+    border: 1px dotted #FFFFFF;
 }
 
 .night-background-search-menu {
@@ -24,7 +38,20 @@
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
 }
 
-.day-suggestions-div {
+.night-suggestions-div {
     background-color: #B4B4B4;
     box-shadow: inset -2px -2px 0 0 #5C5C5C, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.night-search-button {
+    background-color: #EE3EFE;
+    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    color: #FFFFFF;
+}
+
+.night-search-button:disabled {
+    background-color: #B4B4B4;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    color: #8F8F8F;
 }

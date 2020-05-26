@@ -57,7 +57,7 @@
         letter-spacing: 0;
     }
     .first-type-button {
-        font-size: 16px;
+        font-size: 1.2vw;
         line-height: 18px;
         text-align: center;
         width: 70%;
@@ -76,7 +76,7 @@
     }
     .welcome p {
         color: #FFFFFF;
-        font-size: 12px;
+        font-size: 0.9vw;
         padding: .3% .5%;
     }
     header {
@@ -91,7 +91,7 @@
         align-items: center;
     }
     header ul li a {
-        font-size: 16px;
+        font-size: 1.2vw;
     }
     header ul li a span {
         text-decoration: underline;
@@ -116,33 +116,26 @@
         grid-template-columns: 87% 13%;
     }
     .search-menu div:nth-of-type(2) input {
-        font-size: 16px;
-        color: #B4B4B4;
+        font-size: 1.2vw;
         line-height: 22px;
         padding: 1% 2%;
+        color: #110038;
         background: #FFFFFF;
         border: 1px solid #979797;
         box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
     }
     .search-menu div:nth-of-type(2) button {
-        background: #E6E6E6;
-        border: 1px solid #808080;
-        box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-        color: #B4B4B4;
         font-size: 1.2vw;
         line-height: 18px;
         margin-left: 5%;
         height: 80%;
-    }
-    .search-menu div:nth-of-type(2) img {
-        font-size: 1.5vw;
-        margin-right: 10%;
+        border: 1px solid #110038;
     }
     .suggestions p {
         background-color: #FFFAFE;
         color: #110038;
         letter-spacing: 0;
-        font-size: 14px;
+        font-size: 1.1vw;
         padding: .5% .8%;
         margin-top: 5%;
     }
@@ -151,23 +144,34 @@
         grid-template-columns: repeat(4, 24.3%);
         column-gap: 1%;
     }
-    .gif-info {
+    .suggestions .gif-info {
         height: 18vw;
+        display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 10% 90%;
-        padding: 1% 1% 0% 1%;
+        grid-template-rows: 8% 92%;
+        padding: 1% 1% 1% 1%;
     }
-    .gif-info p {
+    .suggestions .gif-info p {
         grid-row-start: 1;
         margin-top: 0%;
         color: #FFFFFF;
         letter-spacing: 0;
         text-decoration: solid;
         align-self: center;
+        align-self: stretch;
+        font-size: 1vw;
     }
-    .gif-place {
+    .suggestions .gif-place {
         grid-row-start: 2;
         background-color: red;
-        height: 90%;
+        align-self: stretch;
+    }
+    .tendency p {
+        background-color: #FFFAFE;
+        color: #110038;
+        letter-spacing: 0;
+        font-size: 1.1vw;
+        padding: .5% .8%;
+        margin-top: 5%;
     }
 }
