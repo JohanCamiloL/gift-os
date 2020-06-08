@@ -1,6 +1,67 @@
 :root {
     --general-left-margin: 10%;
     --general-right-margin: 10%;
-    --day-background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-    --night-background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    --default-font-family: 'Chakra Petch', sans-serif;
+}
+
+.light-theme {
+    --body-background-color: #FFF4FD;
+    --section-title-background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    --first-type-button-background-color: #F7C9F3;
+    --first-type-button-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    --first-type-button-color: #110038;
+    --first-type-button-hover-bg-color: #E6BBE2;
+    --section-background-color: #E6E6E6;
+    --section-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    --dropdown-bgcolor-theme-light-button: #FFF4FD;
+    --dropdown-border-theme-light-button: 1px solid #CCA6C9;
+    --dropdown-boxshadow-theme-light-button: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    --dropdown-bgcolor-theme-dark-button: #F0F0F0;
+    --dropdown-border-theme-dark-button: 1px solid #808080;
+    --dropdown-boxshadow-theme-dark-button: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    --dropdown-color-theme-dark-button: #110038;
+    --a-menu-color: #110038;
+    --search-gif-button-bgcolor: #F7C9F3;
+    --search-gif-button-color: #36333d;
+    --search-gif-button-disabled-color: #B4B4B4;
+    --search-gif-button-hover-bgcolor: #E6BBE2;
+    --mis-guifos-button-hover-border: 1px dotted #110038;
+    --search-result-item-bgcolor: #F0F0F0;
+    --search-result-item-hover-bgcolor: #DBDBDB;
+    --section-divisor-border: 1px solid #E6BBE2;
+    --section-divisor-boxshadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+    --related-tags-bgcolor: #4180F6;
+    --related-tags-boxshadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    --gif-button-hover-bgcolor: #3A72DB;
+}
+
+.dark-theme {
+    --body-background-color: rgb(5, 3, 75);
+    --section-title-background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+    --first-type-button-background-color: #EE3EFE;
+    --first-type-button-box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+    --first-type-button-color: #ffffff;
+    --first-type-button-hover-bg-color: #CE36DB;
+    --section-background-color: #B4B4B4;
+    --section-box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+    --dropdown-bgcolor-theme-light-button: #CCCCCC;
+    --dropdown-border-theme-light-button: 1px solid #808080;
+    --dropdown-boxshadow-theme-light-button: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    --dropdown-bgcolor-theme-dark-button: #2E32FB;
+    --dropdown-border-theme-dark-button: 1px solid rgba(51, 53, 143, 0.20);
+    --dropdown-boxshadow-theme-dark-button: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    --dropdown-color-theme-dark-button: #FFFFFF;
+    --a-menu-color: #FFFFFF;
+    --search-gif-button-bgcolor: #EE3EFE;
+    --search-gif-button-color: #FFFFFF;
+    --search-gif-button-disabled-color: #8F8F8F;
+    --search-gif-button-hover-bgcolor: #CE36DB;
+    --mis-guifos-button-hover-border: 1px dotted #FFFFFF;
+    --search-result-item-bgcolor: #CCCCCC;
+    --search-result-item-hover-bgcolor: #CCCCCC;
+    --section-divisor-border: 1px solid #2E32FB;
+    --section-divisor-boxshadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+    --related-tags-bgcolor: #2E32FB;
+    --related-tags-boxshadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+    --gif-button-hover-bgcolor: #2629CC;
 }

@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans&display=swap" rel="stylesheet">
-    <title>gifOS</title>
+    <title>mis gifOS</title>
 </head>
 
-<body onload="onLoadIndex()">
+<body onload="onLoadMisGuifos()">
     <div id="welcome">
         <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
             visitas:
@@ -18,6 +17,7 @@
     </div>
 
     <header class="general-marg">
+        <img src="img/arrow.svg" alt="" id="back-arrow">
         <img src="img/gifOF_logo.png" alt="Logo de Gif OS" id="day-logo" class="page-logo">
         <img src="img/gifOF_logo_dark.png" alt="Logo de Gif OS" id="night-logo" class="page-logo">
         <nav>
@@ -39,63 +39,43 @@
                     </div>
                 </li>
                 <li>
-                    <a href="./mis_guifos.html" id="mis-guifos-button" class="a-no-style"><span>M</span>is Guifos</a>
+                    <a href="#" id="mis-guifos-button" class="a-no-style"><span>M</span>is Guifos</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <section id="search-gif">
-        <div class="search-menu general-marg">
-            <div class="row-start-1">
-                <p>Buscar</p>
+    <section id="crear-guifo-window">
+        <p>Crear Guifos</p>
+        <div>
+            <img src="img/window img.png" alt="">
+            <p class="chakra-regular-font">Aqui podras crear tus propios guifos</p>
+            <ul>
+                <li>Crear tu <span class="guifo-italic">guifo</span> es muy fácil, graba cualquier imagen con tu cámara
+                    y obtén guifos personalizados. Los
+                    pasos para crear tu guifo son:</li>
+                <li><span>1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                <li><span>2)</span> Capturar tu momento guifo</li>
+                <li><span>3)</span> Revisar el momento</li>
+                <li><span>4)</span> Listo para subir y compartir</li>
+                <li>¿Quiere comenzar a crear tu <span class="guifo-italic">guifo</span> ahora?</li>
+            </ul>
+            <div>
+                <button id="cancel-create-guifo" class="first-type-button">Cancelar</button>
+                <button id="start-create-guifo" class="first-type-button">Comenzar</button>
             </div>
-            <div class="row-start-2">
-                <input id="search-gif-input" type="text" class="column-start-1"
-                    placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                <button id="search-gif-button" class="column-start-2" disabled>
-                    <i class="fas fa-search"></i>
-                    Buscar
-                </button>
-            </div>
-        </div>
-        <div id="search-result" class="general-marg">
-            <p class="row-start-1">Resultado de busqueda sugerido</p>
-            <p class="row-start-2">Un resultado similar de busqueda</p>
-            <p class="row-start-3">Y otro mas</p>
         </div>
     </section>
 
-    <section id="suggestions" class="general-marg">
-        <p class="section-divisor">Hoy te sugerimos:</p>
-        <div class="gifs-container">
-        </div>
-    </section>
-
-    <section id="tendencies" class="general-marg">
-        <p class="row-start-1 section-divisor">Tendencias:</p>
-        <div class="gifs-container">
-        </div>
-    </section>
-
-    <section id="related-tags" class="general-marg">
-        <button>#Un ejemplo</button>
-        <button>#Un ejemplo más largo</button>
-        <button>#tagsrelacionados</button>
-    </section>
-
-    <section id="search-results" class="general-marg">
-        <p class="row-start-1 section-divisor">
-            <span id="search-word"></span> (resultados)</p>
-        <div class="gifs-container">
-
-        </div>
+    <section id="mis-guifos" class="display-grid general-marg">
+        <p class="row-start-1 chakra-regular-font  section-divisor">Mis guifos</p>
+        <div></div>
     </section>
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
-    <script src="js/listeners.js"></script>
     <script src="js/menu_listeners.js"></script>
+    <script src="js/mis_guifos_listeners.js"></script>
     <script src="https://kit.fontawesome.com/f439f476a0.js" crossorigin="anonymous"></script>
 </body>
 

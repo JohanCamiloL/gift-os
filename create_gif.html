@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Crear gifOS</title>
+</head>
+
+<body onload="onLoadCreateGuifos()">
+    <div id="welcome">
+        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
+            visitas:
+            <span>12.765.803</span></p>
+    </div>
+    <header class="display-grid general-marg">
+        <img src="img/arrow.svg" alt="" id="back-arrow">
+        <img src="img/gifOF_logo.png" alt="Logo de Gif OS" id="day-logo" class="page-logo">
+        <img src="img/gifOF_logo_dark.png" alt="Logo de Gif OS" id="night-logo" class="page-logo">
+    </header>
+
+    <section id="rec-guifo" class="general-marg">
+        <p id="rec-guifo-title">Un Chequeo Antes de Empezar</p>
+        <div id="div-video">
+            <img id="gif-preview" src="" alt="">
+            <video src=""></video>
+            <div id="uploading-guifo-section">
+                <img src="img/globe_img.png" alt="">
+                <p>Estamos subiendo tu guifo...</p>
+                <div></div>
+                <p>Tiempo restante: <span>38 años</span> algunos minutos.</p>
+            </div>
+        </div>
+        <div id="recording-buttons" class="create-guifo-buttons">
+            <button class="first-type-button record"><img src="img/camera.svg" alt=""></button>
+            <button class="first-type-button record">Capturar</button>
+        </div>
+        <div id="stop-recording-section">
+            <p id="recording-counter" class="recording-counter">00:00:00:00</p>
+            <div class="create-guifo-buttons">
+                <button class="first-type-button stop-record"><img src="img/recording.svg" alt=""></button>
+                <button class="first-type-button stop-record">Listo</button>
+            </div>
+        </div>
+        <div id="gif-recorded-section">
+            <p id="recording-counter-fixed" class="recording-counter">00:00:00:00</p>
+            <div>Hola</div>
+            <div>
+                <button id="restart-recording-button" class="first-type-button">Repetir Captura</button>
+                <button id="save-guifo-button" class="first-type-button">Subir Guifo</button>
+            </div>
+        </div>
+        <button id="cancel-uploading" class="first-type-button">Cancelar</button>
+        <div id="guifo-uploaded">
+            <img src="" alt="">
+            <div>
+                <p>Guifo creado con éxito</p>
+                <button class="first-type-button">Copiar Enlace Guifo</button>
+                <button class="first-type-button">Descargar Guifo</button>
+            </div>
+            <button id="uploaded-done-button" class="first-type-button">Listo</button>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/create_guifos_script.js"></script>
+    <script src="https://kit.fontawesome.com/f439f476a0.js" crossorigin="anonymous"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+</body>
+
+</html>
