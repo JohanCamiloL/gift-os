@@ -115,7 +115,7 @@ const startRecording = async () => {
 /**
  * This function stops capturing the gif video.
  */
-const stopRecording = async () => {
+const stopRecording = () => {
     recorder.stopRecording(() => {
         blob = recorder.getBlob();
         gifLocalUrl = URL.createObjectURL(blob);
@@ -139,10 +139,7 @@ const onLoadCreateGuifos = () => {
 const uploadGuifo = () => {
     fetch("https://upload.giphy.com/v1/gifs?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN", {
         method: "POST",
-        body: blob,
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        }
+        body: blob
     })
         .then(response => {
             return response.json();
@@ -158,7 +155,6 @@ const uploadGuifo = () => {
             document.getElementById("cancel-uploading").style.display = "none";
             document.getElementById("guifo-uploaded").style.display = "grid";
             document.querySelector("#guifo-uploaded img").setAttribute("src", gifLocalUrl);
-            recorder = null;
             blob = null;
         })
         .catch(error => {
