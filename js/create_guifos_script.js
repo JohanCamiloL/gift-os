@@ -139,7 +139,10 @@ const onLoadCreateGuifos = () => {
 const uploadGuifo = () => {
     fetch("https://upload.giphy.com/v1/gifs?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN", {
         method: "POST",
-        body: blob
+        body: blob,
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
     })
         .then(response => {
             return response.json();
