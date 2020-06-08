@@ -1,5 +1,6 @@
 "use strict";
-const GIF_URL = "https://api.giphy.com/v1/gifs";
+const GIF_URL = "https://api.giphy.com/v1";
+const API_KEY = "sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN";
 
 /**
  * Set the class name on body element.
@@ -23,6 +24,32 @@ function changeLogo(theme) {
         document.getElementById("day-logo").style.display = "block";
         document.getElementById("night-logo").style.display = "none";
     }
+}
+
+/**
+ * This function gets similar words as word provided.
+ * @param {string} word The word to compare.
+ * @returns An array with similar words.
+ */
+const getSimilarResults = async (word) => {
+    const response = await fetch(`${GIF_URL}/gifs/search/tags?api_key=${API_KEY}&q=${word}`);
+    const json = await response.json();
+    const words = json.data.map(word => word.name);
+
+    return words.slice(0, 3);
+}
+
+/**
+ * Ths function gets related terms from a given word.
+ * @param {*} word Word to search related terms.
+ * @returns A list of strings.
+ */
+const getRelatedTerms = async (word) => {
+    const response = await fetch(`${GIF_URL}/tags/related/${word}?api_key=${API_KEY}`)
+    const json = await response.json();
+    const words = json.data.map(word => word.name);
+
+    return words.slice(0, 3);
 }
 
 /**
@@ -59,7 +86,7 @@ const getGifs = async (url) => {
 const getSuggestionsGifs = async () => {
     const arrGifs = new Array();
     for (let i = 0; i < 4; i++) {
-        const gif = await getGifs(`${GIF_URL}/random?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN`);
+        const gif = await getGifs(`${GIF_URL}/gifs/random?api_key=${API_KEY}`);
         arrGifs.push(createGifObjectFromResponse(gif.data));
     }
     return arrGifs;
@@ -71,7 +98,7 @@ const getSuggestionsGifs = async () => {
  */
 const getTrendingGifs = async () => {
     const limit = Math.floor(Math.random() * (18)) + 8;
-    const gifs = await getGifs(`${GIF_URL}/trending?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN&limit=${limit}`)
+    const gifs = await getGifs(`${GIF_URL}/gifs/trending?api_key=${API_KEY}&limit=${limit}`)
     return gifs.data.map(gif => createGifObjectFromResponse(gif));
 }
 
@@ -97,7 +124,7 @@ const putTrendingGifsOnWebPage = async () => {
  * @returns An Array of gif objects.
  */
 const getSearchedGifs = async (word) => {
-    const gifs = await getGifs(`${GIF_URL}/search?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN&q=${word}`);
+    const gifs = await getGifs(`${GIF_URL}/gifs/search?api_key=${API_KEY}&q=${word}`);
     return gifs.data.map(gif => createGifObjectFromResponse(gif));
 }
 

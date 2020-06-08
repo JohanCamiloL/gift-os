@@ -134,11 +134,11 @@ const onLoadCreateGuifos = () => {
 }
 
 /**
- * 
+ * This function attempts to upload a gif to Giphy through its API.
  */
 const uploadGuifo = () => {
-    fetch("https://upload.giphy.com/v1/gifs?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN", {
-        method: "POST",
+    fetch("http://upload.giphy.com/v1/gifs?api_key=sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN", {
+        method: "",
         body: blob
     })
         .then(response => {
