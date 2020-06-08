@@ -1,5 +1,5 @@
 "use strict";
-const GIF_URL = "http://api.giphy.com/v1/gifs";
+const GIF_URL = "https://api.giphy.com/v1/gifs";
 
 /**
  * Set the class name on body element.
