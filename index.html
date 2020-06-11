@@ -2,101 +2,105 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans&display=swap" rel="stylesheet">
-    <title>gifOS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans&display=swap" rel="stylesheet" />
+  <title>gifOS</title>
 </head>
 
 <body onload="onLoadIndex()">
-    <div id="welcome">
-        <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de
-            visitas:
-            <span>12.765.803</span></p>
+  <div id="welcome">
+    <p>
+      ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+      de visitas: <span>12.765.803</span>
+    </p>
+  </div>
+
+  <header class="general-marg">
+    <img src="img/gifOF_logo.png" alt="Logo de Gif OS" id="day-logo" class="page-logo" />
+    <img src="img/gifOF_logo_dark.png" alt="Logo de Gif OS" id="night-logo" class="page-logo" />
+    <nav>
+      <ul>
+        <li>
+          <button id="crear-guifos" class="first-type-button justify-self-end">
+            Crear Guifos
+          </button>
+        </li>
+        <li>
+          <div id="dropdown" class="display-flex row-start-1">
+            <button class="first-type-button">Elegir Tema</button>
+            <button id="dropdown-button" class="first-type-button">
+              <i class="fas fa-sort-down"></i>
+            </button>
+          </div>
+          <div id="dropdown-theme" class="row-start-2">
+            <button id="button-day" class="first-type-button">
+              <span>S</span>ailor Day
+            </button>
+            <button id="button-night" class="first-type-button">
+              <span>S</span>ailor Night
+            </button>
+          </div>
+        </li>
+        <li>
+          <a href="./mis_guifos.html" id="mis-guifos-button" class="a-no-style"><span>M</span>is Guifos</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="search-gif">
+    <div class="search-menu general-marg">
+      <div class="row-start-1">
+        <p>Buscar</p>
+      </div>
+      <div class="row-start-2">
+        <input id="search-gif-input" type="text" class="column-start-1"
+          placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" />
+        <button id="search-gif-button" class="column-start-2" disabled>
+          <i class="fas fa-search"></i>
+          Buscar
+        </button>
+      </div>
     </div>
+    <div id="related-search-words" class="general-marg">
+      <p class="row-start-1"></p>
+      <p class="row-start-2"></p>
+      <p class="row-start-3"></p>
+    </div>
+  </section>
 
-    <header class="general-marg">
-        <img src="img/gifOF_logo.png" alt="Logo de Gif OS" id="day-logo" class="page-logo">
-        <img src="img/gifOF_logo_dark.png" alt="Logo de Gif OS" id="night-logo" class="page-logo">
-        <nav>
-            <ul>
-                <li>
-                    <button id="crear-guifos" class="first-type-button justify-self-end">
-                        Crear Guifos</button>
-                </li>
-                <li>
-                    <div id="dropdown" class="display-flex row-start-1">
-                        <button class="first-type-button">Elegir Tema</button>
-                        <button id="dropdown-button" class="first-type-button">
-                            <i class="fas fa-sort-down"></i>
-                        </button>
-                    </div>
-                    <div id="dropdown-theme" class="row-start-2">
-                        <button id="button-day" class="first-type-button"><span>S</span>ailor Day</button>
-                        <button id="button-night" class="first-type-button"><span>S</span>ailor Night</button>
-                    </div>
-                </li>
-                <li>
-                    <a href="./mis_guifos.html" id="mis-guifos-button" class="a-no-style"><span>M</span>is Guifos</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <section id="suggestions" class="general-marg">
+    <p class="section-divisor">Hoy te sugerimos:</p>
+    <div class="gifs-container"></div>
+  </section>
 
-    <section id="search-gif">
-        <div class="search-menu general-marg">
-            <div class="row-start-1">
-                <p>Buscar</p>
-            </div>
-            <div class="row-start-2">
-                <input id="search-gif-input" type="text" class="column-start-1"
-                    placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                <button id="search-gif-button" class="column-start-2" disabled>
-                    <i class="fas fa-search"></i>
-                    Buscar
-                </button>
-            </div>
-        </div>
-        <div id="search-result" class="general-marg">
-            <p class="row-start-1"></p>
-            <p class="row-start-2"></p>
-            <p class="row-start-3"></p>
-        </div>
-    </section>
+  <section id="tendencies" class="general-marg">
+    <p class="row-start-1 section-divisor">Tendencias:</p>
+    <div class="gifs-container"></div>
+  </section>
 
-    <section id="suggestions" class="general-marg">
-        <p class="section-divisor">Hoy te sugerimos:</p>
-        <div class="gifs-container">
-        </div>
-    </section>
+  <section id="related-tags" class="general-marg">
+    <button></button>
+    <button></button>
+    <button></button>
+  </section>
 
-    <section id="tendencies" class="general-marg">
-        <p class="row-start-1 section-divisor">Tendencias:</p>
-        <div class="gifs-container">
-        </div>
-    </section>
+  <section id="search-results" class="general-marg">
+    <p class="row-start-1 section-divisor">
+      <span id="search-word"></span> (resultados)
+    </p>
+    <div class="gifs-container"></div>
+  </section>
 
-    <section id="related-tags" class="general-marg">
-        <button></button>
-        <button></button>
-        <button></button>
-    </section>
-
-    <section id="search-results" class="general-marg">
-        <p class="row-start-1 section-divisor">
-            <span id="search-word"></span> (resultados)</p>
-        <div class="gifs-container">
-
-        </div>
-    </section>
-
-    <!-- Scripts -->
-    <script src="js/script.js"></script>
-    <script src="js/listeners.js"></script>
-    <script src="js/menu_listeners.js"></script>
-    <script src="https://kit.fontawesome.com/f439f476a0.js" crossorigin="anonymous"></script>
+  <!-- Scripts -->
+  <script src="js/util.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/listeners.js"></script>
+  <script src="js/menu_listeners.js"></script>
+  <script src="https://kit.fontawesome.com/f439f476a0.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

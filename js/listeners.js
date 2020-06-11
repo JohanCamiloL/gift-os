@@ -1,44 +1,70 @@
-"use strict";
-const searchResultElements = [...document.querySelectorAll("#search-result p")];
+/* eslint-disable linebreak-style */
+'use strict';
+const searchButton = document.getElementById('search-gif-button');
+const searchResult = document.getElementById('related-search-words');
+const searchInput = document.getElementById('search-gif-input');
 
-document.getElementById("search-gif-input").addEventListener("input", async (elem) => {
-    const searchButton = document.getElementById("search-gif-button");
-    const value = elem.target.value;
-    if (value !== "") {
-        searchButton.disabled = false;
-        hideOrDisplayElement("search-result", "grid");
-        let searchResults = await getSimilarResults(value);
+/**
+ * Show or hide some elements on search section when is active or not.
+ * @param {string} inputText Actual text on input element.
+ */
+const setSearchInputElements = async (inputText) => {
+  searchButton.disabled = !inputText;
+  await setSimilarResultElementsValue(inputText);
+  setDisplayValue('related-search-words', inputText ? 'grid' : 'none');
+};
 
-        searchResults.forEach((result, index) => searchResultElements[index].innerText = result);
-    } else {
-        searchButton.disabled = true;
-        hideOrDisplayElement("search-result", "none");
-    }
+/**
+ * Sets the value on similar results elements from given word.
+ * @param {string} inputText Word to search similar results.
+ */
+const setSimilarResultElementsValue = async (inputText) => {
+  const searchResultElements = [
+    ...document.querySelectorAll('#related-search-words p'),
+  ];
+  const searchResults = await getSimilarResults(inputText);
+  searchResults.forEach(
+    (result, index) => (searchResultElements[index].innerText = result),
+  );
+};
+
+const showSearchedGifs = async () => {
+  const relatedTags = getHtmlElementsList('#related-tags button');
+  const searchedText = searchInput.value;
+  const relatedTerms = await getRelatedTerms(searchedText);
+
+  relatedTerms.forEach(
+    (term, index) => (relatedTags[index].innerText = `#${term}`),
+  );
+
+  document.getElementById('search-word').innerText = searchedText;
+  document // This deletes old gif elements.
+    .querySelector('#search-results .gifs-container').innerHTML = '';
+  putSearchedGifsOnWebPage(searchedText);
+
+  displaySearchElements();
+};
+
+/**
+ * This function hide and display necessary HTML elements to show the searched gifs.
+ */
+const displaySearchElements = () => {
+  setDisplayValue('tendencies');
+  setDisplayValue('suggestions');
+  setDisplayValue('related-search-words');
+  setDisplayValue('search-results', 'block');
+  setDisplayValue('related-tags', 'block');
+};
+
+searchInput.addEventListener('input', (e) =>
+  setSearchInputElements(e.target.value),
+);
+
+searchResult.addEventListener('click', (e) => {
+  if (e.target.matches('p')) {
+    setDisplayValue('related-search-words', 'none');
+    searchInput.value = e.target.innerText;
+  }
 });
 
-[...document.getElementById("search-result").childNodes]
-    .filter(elem => elem.nodeName !== "#text")
-    .forEach(elem => {
-        elem.addEventListener("click", (e) => {
-            hideOrDisplayElement("search-result", "none");
-            document.getElementById("search-gif-input").value = e.target.innerText;
-        });
-    })
-
-const relatedTags = [...document.querySelectorAll("#related-tags button")];
-
-document.getElementById("search-gif-button").addEventListener("click", async () => {
-    stateSuggestionsAndTendencies("none");
-    hideOrDisplayElement("search-results", "block");
-    hideOrDisplayElement("related-tags", "block");
-    hideOrDisplayElement("search-result", "none");
-
-    const searchedText = document.getElementById("search-gif-input").value;
-    const relatedTerms = await getRelatedTerms(searchedText);
-
-    relatedTerms.forEach((term, index) => relatedTags[index].innerText = `#${term}`);
-
-    document.getElementById("search-word").innerText = searchedText;
-    document.querySelector("#search-results .gifs-container").innerHTML = "";
-    putSearchedGifsOnWebPage(searchedText);
-});
+searchButton.addEventListener('click', showSearchedGifs);
