@@ -1,9 +1,11 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
 /**
  * Set the disable property from a given element ID.
  * @param {string} elementId HTML id Element.
  * @param {string} displayType The display type.
  */
-const setDisabledState = (elementId, displayType = "none") => {
+const setDisabledState = (elementId, displayType = 'none') => {
   document.getElementById(elementId).style.display = displayType;
 };
 
@@ -12,7 +14,7 @@ const setDisabledState = (elementId, displayType = "none") => {
  * @param {string} elementId HTML element id.
  * @param {string} value     New display value.
  */
-const setDisplayValue = (elementId, value = "none") => {
+const setDisplayValue = (elementId, value = 'none') => {
   document.getElementById(elementId).style.display = value;
 };
 
@@ -34,8 +36,8 @@ const getRequest = async (url) => {
  * Get the actual theme set on Local Storage.
  */
 const getActualThemeFromLS = () => {
-  const themeLS = window.localStorage.getItem("theme");
-  return themeLS ? themeLS : "light-theme";
+  const themeLS = window.localStorage.getItem('theme');
+  return themeLS || 'light-theme';
 };
 
 /**
@@ -46,8 +48,8 @@ const getActualThemeFromLS = () => {
  * @param {string} content      Text content that belongs to the element.
  * @returns A new HTML element.
  */
-function createHtmlElement(element, classes = [], id = "", content = "") {
-  let elem = document.createElement(element);
+function createHtmlElement(element, classes = [], id = '', content = '') {
+  const elem = document.createElement(element);
 
   classes.forEach((classItem) => {
     elem.classList.add(classItem);

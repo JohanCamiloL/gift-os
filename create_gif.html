@@ -29,7 +29,14 @@
             <div id="uploading-guifo-section">
                 <img src="img/globe_img.png" alt="">
                 <p>Estamos subiendo tu guifo...</p>
-                <div></div>
+                <div class="progress">
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
                 <p>Tiempo restante: <span>38 años</span> algunos minutos.</p>
             </div>
         </div>
@@ -38,7 +45,9 @@
             <button class="first-type-button record">Capturar</button>
         </div>
         <div id="stop-recording-section">
-            <p id="recording-counter" class="recording-counter">00:00:00:00</p>
+            <p class="recording-counter">
+                00:00:<span id="minutes">00</span>:<span id="seconds">00</span>
+            </p>
             <div class="create-guifo-buttons">
                 <button class="first-type-button stop-record"><img src="img/recording.svg" alt=""></button>
                 <button class="first-type-button stop-record">Listo</button>
@@ -46,7 +55,17 @@
         </div>
         <div id="gif-recorded-section">
             <p id="recording-counter-fixed" class="recording-counter">00:00:00:00</p>
-            <div>Hola</div>
+            <div class="progress">
+                <button class="first-type-button">
+                    <img src="img/forward.svg" alt="">
+                </button>
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
             <div>
                 <button id="restart-recording-button" class="first-type-button">Repetir Captura</button>
                 <button id="save-guifo-button" class="first-type-button">Subir Guifo</button>

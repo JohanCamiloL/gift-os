@@ -531,12 +531,11 @@
     background-color: #ffffff;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
-    align-self: center;
-    height: 80%;
+    padding: 6% 0%;
     text-align: center;
-    display: grid;
-    align-content: center;
+    align-self: center;
     font-size: 1vw;
+    grid-template-rows: 1;
   }
   #gif-recorded-section {
     display: none;
@@ -556,6 +555,38 @@
     justify-self: stretch;
     width: 100%;
     color: #110038;
+  }
+  #gif-recorded-section .progress {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 75%;
+    align-self: center;
+    column-gap: 2%;
+    margin-right: 10%;
+  }
+  #gif-recorded-section .progress div {
+    height: 100%;
+    background-color: gray;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+    display: grid;
+    grid-template-columns: repeat(15, 6.16%);
+    column-gap: .5%;
+    align-items: center;
+  }
+  #gif-recorded-section .progress div div {
+    background-color: var(--first-type-button-background-color);
+    box-shadow: none;
+    height: 90%;
+  }
+  #gif-recorded-section .progress button img {
+    width: 30%;
+  }
+  #gif-recorded-section .progress button {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
   }
   #uploading-guifo-section {
     display: none;
@@ -624,5 +655,15 @@
     padding: 2%;
     justify-self: flex-end;
     width: 40%;
+  }
+  #mis-guifos {
+    margin-bottom: 5%;
+  }
+  #mis-guifos div {
+    display: grid;
+    grid-template-columns: repeat(4, 24.3%);
+  }
+  #mis-guifos div img {
+    width: 100%;
   }
 }

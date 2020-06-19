@@ -1,5 +1,4 @@
 /* eslint-disable linebreak-style */
-'use strict';
 const searchButton = document.getElementById('search-gif-button');
 const searchResult = document.getElementById('related-search-words');
 const searchInput = document.getElementById('search-gif-input');
@@ -23,26 +22,7 @@ const setSimilarResultElementsValue = async (inputText) => {
     ...document.querySelectorAll('#related-search-words p'),
   ];
   const searchResults = await getSimilarResults(inputText);
-  searchResults.forEach(
-    (result, index) => (searchResultElements[index].innerText = result),
-  );
-};
-
-const showSearchedGifs = async () => {
-  const relatedTags = getHtmlElementsList('#related-tags button');
-  const searchedText = searchInput.value;
-  const relatedTerms = await getRelatedTerms(searchedText);
-
-  relatedTerms.forEach(
-    (term, index) => (relatedTags[index].innerText = `#${term}`),
-  );
-
-  document.getElementById('search-word').innerText = searchedText;
-  document // This deletes old gif elements.
-    .querySelector('#search-results .gifs-container').innerHTML = '';
-  putSearchedGifsOnWebPage(searchedText);
-
-  displaySearchElements();
+  searchResults.forEach((result, index) => (searchResultElements[index].innerText = result));
 };
 
 /**
@@ -56,9 +36,22 @@ const displaySearchElements = () => {
   setDisplayValue('related-tags', 'block');
 };
 
-searchInput.addEventListener('input', (e) =>
-  setSearchInputElements(e.target.value),
-);
+const showSearchedGifs = async () => {
+  const relatedTags = getHtmlElementsList('#related-tags button');
+  const searchedText = searchInput.value;
+  const relatedTerms = await getRelatedTerms(searchedText);
+
+  relatedTerms.forEach((term, index) => (relatedTags[index].innerText = `#${term}`));
+
+  document.getElementById('search-word').innerText = searchedText;
+  document // This deletes old gif elements.
+    .querySelector('#search-results .gifs-container').innerHTML = '';
+  putSearchedGifsOnWebPage(searchedText);
+
+  displaySearchElements();
+};
+
+searchInput.addEventListener('input', (e) => setSearchInputElements(e.target.value));
 
 searchResult.addEventListener('click', (e) => {
   if (e.target.matches('p')) {
