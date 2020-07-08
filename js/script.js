@@ -56,7 +56,7 @@ const getRelatedTerms = async (word) => {
  */
 const createGifObjectFromResponse = (gif) => ({
   title: gif.title.split(' GIF')[0],
-  src: gif.images.downsized_large.url,
+  src: gif.images.fixed_width_downsampled.url,
   link: gif.url,
 });
 

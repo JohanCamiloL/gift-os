@@ -190,6 +190,7 @@ document.getElementById('restart-recording-button')
     document.getElementById('recording-buttons').style.display = 'grid';
     document.querySelector('#div-video video').style.display = 'block';
     document.getElementById('gif-preview').style.display = 'none';
+    changeElementContent('rec-guifo-title', 'Un Chequeo Antes de Empezar');
   });
 
 document.getElementById('uploaded-done-button').addEventListener('click', () => {
