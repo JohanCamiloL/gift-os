@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 document.getElementById('cancel-create-guifo').addEventListener('click', () => {
   document.getElementById('mis-guifos-button').click();
 });

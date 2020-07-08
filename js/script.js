@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const GIF_URL = 'https://api.giphy.com/v1';
 const API_KEY = 'sOVe2WHH24F3yDpkJH5gNryTxaEt4CmN';
 
@@ -40,7 +39,7 @@ const getSimilarResults = async (word) => {
 
 /**
  * Ths function gets related terms from a given word.
- * @param {*} word Word to search related terms.
+ * @param {string} word Word to search related terms.
  * @returns A list of strings.
  */
 const getRelatedTerms = async (word) => {

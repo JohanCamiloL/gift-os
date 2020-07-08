@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const changeDisplayDropdownTheme = () => {
   const elem = document.getElementById('dropdown-theme');
   if (elem.style.display === '') {

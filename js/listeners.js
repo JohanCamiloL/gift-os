@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const searchButton = document.getElementById('search-gif-button');
 const searchResult = document.getElementById('related-search-words');
 const searchInput = document.getElementById('search-gif-input');
