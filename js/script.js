@@ -54,10 +54,10 @@ const getRelatedTerms = async (word) => {
  * @param {object} gif
  * @returns Gif object.
  */
-const createGifObjectFromResponse = (gif) => ({
-  title: gif.title.split(' GIF')[0],
+const createGifObjectFromResponse = gif => ({
+  title: gif.title === '' ? 'No title' : gif.title,
   src: gif.images.fixed_width_downsampled.url,
-  link: gif.url,
+  link: gif.url
 });
 
 /**
@@ -96,6 +96,13 @@ const createGifSuggestionElement = (position, gifElement) => {
   const pElement = createHtmlElement('p', [], '', `#${gifElement.title}`);
   const gifPlace = createHtmlElement('div', ['gif-place']);
   const buttonGif = createHtmlElement('button', [], '', 'Ver más...');
+
+  buttonGif.onclick = () => {
+    document.getElementById('search-gif-input').value = gifElement.title;
+    document.getElementById('search-gif-button').disabled = false;
+    document.getElementById('search-gif-button').click();
+  }
+
   const gifImage = createGifImage(gifElement.src);
   const closeGifButton = createHtmlElement('button', [], '', 'X');
 

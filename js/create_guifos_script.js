@@ -126,13 +126,16 @@ const uploadGuifo = () => {
       if (!window.localStorage.getItem('gifs')) {
         window.localStorage.setItem('gifs', '{"gifs":[]}');
       }
+
       const localStorageGifs = JSON.parse(window.localStorage.getItem('gifs'));
       localStorageGifs.gifs.push(response.data.id);
       window.localStorage.setItem('gifs', JSON.stringify(localStorageGifs));
+
       document.getElementById('div-video').style.display = 'none';
       document.getElementById('cancel-uploading').style.display = 'none';
       document.getElementById('guifo-uploaded').style.display = 'grid';
       document.querySelector('#guifo-uploaded img').setAttribute('src', gifLocalUrl);
+
       blob = null;
     })
     .catch((error) => {

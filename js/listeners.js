@@ -17,9 +17,7 @@ const setSearchInputElements = async (inputText) => {
  * @param {string} inputText Word to search similar results.
  */
 const setSimilarResultElementsValue = async (inputText) => {
-  const searchResultElements = [
-    ...document.querySelectorAll('#related-search-words p'),
-  ];
+  const searchResultElements = [...document.querySelectorAll('#related-search-words p')];
   const searchResults = await getSimilarResults(inputText);
   searchResults.forEach((result, index) => (searchResultElements[index].innerText = result));
 };
@@ -28,8 +26,8 @@ const setSimilarResultElementsValue = async (inputText) => {
  * This function hide and display necessary HTML elements to show the searched gifs.
  */
 const displaySearchElements = () => {
-  setDisplayValue('tendencies');
   setDisplayValue('suggestions');
+  setDisplayValue('tendencies');
   setDisplayValue('related-search-words');
   setDisplayValue('search-results', 'block');
   setDisplayValue('related-tags', 'block');
@@ -42,14 +40,28 @@ const showSearchedGifs = async () => {
 
   relatedTerms.forEach((term, index) => (relatedTags[index].innerText = `#${term}`));
 
+  relatedTags.forEach(button => {
+    button.onclick = () => {
+      const buttonText = button.innerText;
+      document.getElementById('search-gif-input').value = buttonText.substring(1);
+      document.getElementById('search-gif-button').click();
+    }
+  })
+
   document.getElementById('search-word').innerText = searchedText;
   document // This deletes old gif elements.
     .querySelector('#search-results .gifs-container').innerHTML = '';
-  putSearchedGifsOnWebPage(searchedText);
+  await putSearchedGifsOnWebPage(searchedText);
 
   displaySearchElements();
+
+  location.href = '#search-results'
 };
 
+
+document.getElementById('back-top').addEventListener('click', () => {
+  location.href = '#welcome';
+});
 searchInput.addEventListener('input', (e) => setSearchInputElements(e.target.value));
 
 searchResult.addEventListener('click', (e) => {
