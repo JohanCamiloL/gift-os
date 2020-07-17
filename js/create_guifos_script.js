@@ -130,11 +130,13 @@ const uploadGuifo = () => {
       const localStorageGifs = JSON.parse(window.localStorage.getItem('gifs'));
       localStorageGifs.gifs.push(response.data.id);
       window.localStorage.setItem('gifs', JSON.stringify(localStorageGifs));
-
+      console.log(response);
       document.getElementById('div-video').style.display = 'none';
       document.getElementById('cancel-uploading').style.display = 'none';
       document.getElementById('guifo-uploaded').style.display = 'grid';
       document.querySelector('#guifo-uploaded img').setAttribute('src', gifLocalUrl);
+
+      addButtonsListenerOnGifUploaded(response.data.id);
 
       blob = null;
     })
@@ -142,6 +144,21 @@ const uploadGuifo = () => {
       console.log(`Error uploading the gif: ${error}`);
     });
 };
+
+/**
+ * This adds listeners to buttons when gif creates is uploaded.
+ * @param {string} gifId uploaded ID gif.
+ */
+const addButtonsListenerOnGifUploaded = (gifId) => {
+  const URL = `https://giphy.com/embed/${gifId}`;
+  document.getElementById('copy-gif-url').addEventListener('click', () => {
+    prompt('Copiar url: Ctrl + C, Enter', URL);
+  });
+
+  document.getElementById('download-gif').addEventListener('click', () => {
+    window.open(URL);
+  });
+}
 
 document.getElementById('back-arrow').addEventListener('click', () => {
   window.location.href = './mis_guifos.html';
